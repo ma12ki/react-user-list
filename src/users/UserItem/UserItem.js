@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { selectUser } from '../users.duck';
+import './UserItem.css';
 
 export const UserItem = ({ user, toggleSelect }) => {
     return (
-        <div>
-            <input type='checkbox' checked={user.selected} onClick={() => toggleSelect(user.id)} />
-            <h4>{user.name}</h4>
-            <code>{user.email}</code>
-        </div>
+        <article className='UserItem'>
+            <aside className='UserItem__chk'><input type='checkbox' checked={user.selected} onClick={() => toggleSelect(user.id)} /></aside>
+            <header className='UserItem__name'>{user.name}</header>
+            <div className='UserItem__email'>{user.email}</div>
+        </article>
     );
 };
 
