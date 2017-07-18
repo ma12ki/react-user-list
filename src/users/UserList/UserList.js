@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 
 import { list as userListSelector } from '../users.selectors';
 import { UserItem } from '../UserItem';
+import './UserList.css';
 
 export const UserList = ({ users }) => {
     const userItems = users.map((user) => <UserItem key={user.id} user={user} />);
 
-    return (<div>{userItems}</div>);
+    return (<div className='UserList'>{userItems}</div>);
 };
 
 UserList.propTypes = {
