@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { confirmSelection } from '../users.duck';
+import './ConfirmButton.css';
 
 export const ConfirmButton = ({ confirm }) => {
     return (
-        <button type='button' onClick={confirm}>Confirm</button>
+        <button type='button' className='Confirm-button' onClick={confirm}>Confirm</button>
     );
 };
 
