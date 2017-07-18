@@ -1,0 +1,25 @@
+.UserCheckbox {
+    display: block;
+    cursor: pointer;
+}
+
+.UserCheckbox input {
+    display: none;
+}
+.UserCheckbox input:checked + .UserCheckbox__box {
+    background-color: #3b99fc;
+}
+
+.UserCheckbox__box {
+    display: inline-block;
+    font-size: 12px;
+    width: 1.3em;
+    height: 1.3em;
+    line-height: 1.3em;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+}

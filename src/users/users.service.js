@@ -10,5 +10,9 @@ const userSort = (a, b) => {
 
 export const getUsers$ = () => {
     return http.get$('users')
-        .map((users) => users.sort(userSort));
+        .map((users) => users.map((user) => {
+                user.selected = false;
+                return user;
+            })
+            .sort(userSort));
 };
