@@ -8,14 +8,15 @@ const namespace = 'users/';
 const LOAD_USERS_START = `${namespace}LOAD_USERS_START`;
 const LOAD_USERS_SUCCESS = `${namespace}LOAD_USERS_SUCCESS`;
 const LOAD_USERS_ERROR = `${namespace}LOAD_USERS_ERROR`;
-
 const SELECT_USER = `${namespace}SELECT_USER`;
+const CONFIRM_SELECTION = `${namespace}CONFIRM_SELECTION`;
 
 // Action creators
 export const loadUsersStart = () => ({ type: LOAD_USERS_START });
 export const loadUsersSuccess = (users) => ({ type: LOAD_USERS_SUCCESS, payload: users });
 export const loadUsersError = (error) => ({ type: LOAD_USERS_ERROR, payload: error });
 export const selectUser = (id) => ({ type: SELECT_USER, payload: id });
+export const confirmSelection = () => ({ type: CONFIRM_SELECTION });
 
 // Reducers
 export const listReducer = (state = [], action = {}) => {
