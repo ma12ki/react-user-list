@@ -69,10 +69,22 @@ export const errorReducer = (state = null, action = {}) => {
     }
 };
 
+export const showSelectedReducer = (state = false, action = {}) => {
+    switch (action.type) {
+        case CONFIRM_SELECTION: {
+            return true;
+        }
+        default: {
+            return state;
+        }
+    }
+};
+
 const reducer = combineReducers({
     list: listReducer,
     loading: loadingReducer,
     error: errorReducer,
+    showSelected: showSelectedReducer,
 });
 
 export default reducer;
