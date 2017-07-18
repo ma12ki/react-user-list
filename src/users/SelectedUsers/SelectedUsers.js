@@ -5,17 +5,25 @@ import { connect } from 'react-redux';
 import {
     showSelected as showSelectedSelector,
     selectedUsers as selectedUsersSelector,
+    selectedCount as selectedCountSelector,
 } from '../users.selectors';
 
-export const SelectedUsers = ({ show, selectedUsers }) => {
-    const list = show ? selectedUsers.map((user) => <div key={user.id}>{user.name}</div>) : '';
+export const SelectedUsers = ({ show, selectedCount, selectedUsers }) => {
+    if (!(show && selectedCount)) {
+        return <i />;
+    }
+    const list = selectedUsers.map((user) => <div key={user.id}>{user.name}</div>);
     return (
-        <div>{list}</div>
+        <div>
+            <h4>Exquisite choice!</h4>
+            {list}
+        </div>
     );
 };
 
 SelectedUsers.propTypes = {
     show: PropTypes.bool.isRequired,
+    selectedCount: PropTypes.number.isRequired,
     selectedUsers: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number,
@@ -28,6 +36,7 @@ SelectedUsers.propTypes = {
 
 const mapStateToProps = (state) => ({
     show: showSelectedSelector(state),
+    selectedCount: selectedCountSelector(state),
     selectedUsers: selectedUsersSelector(state),
 });
 

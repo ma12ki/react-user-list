@@ -4,4 +4,13 @@
     border: none;
     background-color: #76cdd3;
     width: 120px;
+    cursor: pointer;
+}
+
+.ConfirmButton:hover {
+    background-color: #81e0e7;
+}
+
+.ConfirmButton:active {
+    background-color: #6ebec4;
 }
