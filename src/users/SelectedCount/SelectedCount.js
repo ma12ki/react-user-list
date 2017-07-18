@@ -6,11 +6,12 @@ import {
     selectedCount as selectedCountSelector,
     listCount as totalCountSelector,
 } from '../users.selectors';
+import './SelectedCount.css';
 
 export const SelectedCount = ({ selectedCount, totalCount }) => {
     const text = selectedCount ? `${selectedCount} of ${totalCount} selected` : '';
     return (
-        <div>{text}</div>
+        <div className='SelectedCount'>{text}</div>
     );
 };
 

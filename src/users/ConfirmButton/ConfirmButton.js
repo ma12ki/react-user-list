@@ -7,7 +7,7 @@ import './ConfirmButton.css';
 
 export const ConfirmButton = ({ confirm }) => {
     return (
-        <button type='button' className='Confirm-button' onClick={confirm}>Confirm</button>
+        <button type='button' className='ConfirmButton' onClick={confirm}>Confirm</button>
     );
 };
 
