@@ -11,15 +11,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
+        <div>
+          <div className='App-header'>
+            <h2>react-user-list</h2>
           </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
+          <main className='main-container'>
             <Users />
-          </p>
+          </main>
         </div>
       </Provider>
     );
