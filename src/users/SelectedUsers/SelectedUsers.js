@@ -8,7 +8,7 @@ import {
 } from '../users.selectors';
 
 export const SelectedUsers = ({ show, selectedUsers }) => {
-    const list = show ? selectedUsers.map((user) => <div>{user.name}</div>) : '';
+    const list = show ? selectedUsers.map((user) => <div key={user.id}>{user.name}</div>) : '';
     return (
         <div>{list}</div>
     );
