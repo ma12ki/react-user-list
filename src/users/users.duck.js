@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-// import { combineEpics } from 'redux-observable';
-// import { Observable } from 'rxjs';
+import { combineEpics } from 'redux-observable';
+import { Observable } from 'rxjs';
+
+import { getUsers$ } from './users.service';
 
 // Actions
 const namespace = 'users/';
@@ -90,3 +92,12 @@ const reducer = combineReducers({
 export default reducer;
 
 // Epics
+export const loadUsers$ = action$ =>
+    action$.ofType(LOAD_USERS_START)
+        .switchMap(() => getUsers$())
+            .map((users) => loadUsersSuccess(users))
+            .catch((err) => Observable.of(loadUsersError(err)));
+
+export const usersEpics = combineEpics(
+    loadUsers$
+);
